@@ -1,0 +1,163 @@
+import { useState } from 'react'
+import { getEventsForDate, toDateKey } from '../data/events'
+
+const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+function startOfDay(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate())
+}
+
+function buildMonthCells(year, monthIndex) {
+  const first = new Date(year, monthIndex, 1)
+  const startOffset = first.getDay()
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate()
+  const cells = []
+
+  for (let i = 0; i < startOffset; i += 1) {
+    cells.push(null)
+  }
+
+  for (let day = 1; day <= daysInMonth; day += 1) {
+    cells.push(new Date(year, monthIndex, day))
+  }
+
+  while (cells.length % 7 !== 0) {
+    cells.push(null)
+  }
+
+  return cells
+}
+
+export default function EventsCalendar() {
+  const today = startOfDay(new Date())
+  const [cursor, setCursor] = useState(() => new Date(today.getFullYear(), today.getMonth(), 1))
+  const [selected, setSelected] = useState(() => toDateKey(today))
+
+  const year = cursor.getFullYear()
+  const monthIndex = cursor.getMonth()
+  const cells = buildMonthCells(year, monthIndex)
+  const selectedEvents = getEventsForDate(selected)
+
+  const monthLabel = cursor.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+  })
+
+  function shiftMonth(delta) {
+    setCursor((current) => new Date(current.getFullYear(), current.getMonth() + delta, 1))
+  }
+
+  return (
+    <div className="animate-rise-delay w-full">
+      <div className="flex items-center justify-between gap-4">
+        <h2 className="text-2xl font-medium tracking-tight text-ink">{monthLabel}</h2>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => shiftMonth(-1)}
+            className="px-3 py-1.5 text-sm text-muted transition-colors hover:text-ink"
+            aria-label="Previous month"
+          >
+            Prev
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setCursor(new Date(today.getFullYear(), today.getMonth(), 1))
+              setSelected(toDateKey(today))
+            }}
+            className="px-3 py-1.5 text-sm text-muted transition-colors hover:text-ink"
+          >
+            Today
+          </button>
+          <button
+            type="button"
+            onClick={() => shiftMonth(1)}
+            className="px-3 py-1.5 text-sm text-muted transition-colors hover:text-ink"
+            aria-label="Next month"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-8 grid grid-cols-7 border-t border-l border-line">
+        {WEEKDAYS.map((day) => (
+          <div
+            key={day}
+            className="border-b border-r border-line px-2 py-3 text-center text-xs font-medium tracking-wide text-muted uppercase"
+          >
+            {day}
+          </div>
+        ))}
+
+        {cells.map((date, index) => {
+          if (!date) {
+            return (
+              <div
+                key={`empty-${index}`}
+                className="min-h-16 border-b border-r border-line bg-paper sm:min-h-20"
+              />
+            )
+          }
+
+          const key = toDateKey(date)
+          const isToday = key === toDateKey(today)
+          const isSelected = key === selected
+          const hasEvents = getEventsForDate(key).length > 0
+
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setSelected(key)}
+              className={[
+                'flex min-h-16 flex-col items-start gap-1 border-b border-r border-line px-2 py-2 text-left transition-colors sm:min-h-20',
+                isSelected ? 'bg-cream' : 'bg-paper hover:bg-cream/60',
+              ].join(' ')}
+            >
+              <span
+                className={[
+                  'inline-flex h-7 w-7 items-center justify-center text-sm',
+                  isToday ? 'bg-crimson font-medium text-white' : 'text-ink',
+                ].join(' ')}
+              >
+                {date.getDate()}
+              </span>
+              {hasEvents && (
+                <span className="mt-auto h-1 w-1 bg-crimson" aria-hidden="true" />
+              )}
+            </button>
+          )
+        })}
+      </div>
+
+      <div className="mt-8 border-t border-line pt-6">
+        <p className="text-sm text-muted">
+          {new Date(`${selected}T12:00:00`).toLocaleDateString('en-US', {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })}
+        </p>
+        {selectedEvents.length === 0 ? (
+          <p className="mt-3 text-base text-ink-soft">No events on this day.</p>
+        ) : (
+          <ul className="mt-4 space-y-4">
+            {selectedEvents.map((event) => (
+              <li key={event.id}>
+                <p className="text-lg font-medium tracking-tight text-ink">{event.title}</p>
+                {(event.time || event.location) && (
+                  <p className="mt-1 text-sm text-muted">
+                    {[event.time, event.location].filter(Boolean).join(' · ')}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  )
+}

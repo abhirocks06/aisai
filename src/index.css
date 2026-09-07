@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* IU Benton Sans - served from fonts.iu.edu for Indiana University sites */
+@font-face {
+  font-family: "BentonSans";
+  src: url("https://fonts.iu.edu/fonts/benton-sans-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BentonSans";
+  src: url("https://fonts.iu.edu/fonts/benton-sans-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BentonSans";
+  src: url("https://fonts.iu.edu/fonts/benton-sans-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "BentonSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Primary: Crimson + White · Secondary: Cream */
+  --color-crimson: #990000;
+  --color-crimson-deep: #7a0000;
+  --color-cream: #f8efe2;
+  --color-cream-cool: #eeedeb;
+  --color-ink: #1a1512;
+  --color-ink-soft: #3d3530;
+  --color-muted: #6b6560;
+  --color-paper: #ffffff;
+  --color-line: #e5e0da;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-crimson) 16%, white);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--color-crimson);
+    padding: 0.7rem 1.15rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 150ms ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid currentColor;
+    background: transparent;
+    padding: 0.7rem 1.15rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 150ms ease;
+  }
+
+  .btn-ghost:hover {
+    opacity: 0.7;
+  }
+
+  .animate-rise {
+    animation: rise 0.55s ease both;
+  }
+
+  .animate-rise-delay {
+    animation: rise 0.55s ease 0.08s both;
+  }
+
+  .animate-rise-delay-2 {
+    animation: rise 0.55s ease 0.14s both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-overlay {
+  animation: mobile-menu-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mobile-menu-item {
+  animation: mobile-menu-item-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-rise-delay,
+  .animate-rise-delay-2,
+  .mobile-menu-overlay,
+  .mobile-menu-item {
+    animation: none;
+  }
+}
