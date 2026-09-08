@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { CONTACT_EMAIL } from '../data/posts'
+import { CONTACT_EMAIL, DISCORD_INVITE } from '../data/posts'
 
 const socialActions = [
   { label: 'Follow on LinkedIn', href: 'https://www.linkedin.com/company/143631076', primary: true },
@@ -9,21 +8,9 @@ const socialActions = [
 export default function JoinCTA({
   id,
   title = 'New members always welcome.',
-  description = 'No CS or AI background required. Email us to join the mailing list or ask about meetings.',
-  mode = 'email',
+  description = 'No CS or AI background required. Join the Discord for meetings, updates, and discussion.',
+  mode = 'join',
 }) {
-  const [copied, setCopied] = useState(false)
-
-  async function copyEmail() {
-    try {
-      await navigator.clipboard.writeText(CONTACT_EMAIL)
-      setCopied(true)
-      window.setTimeout(() => setCopied(false), 2000)
-    } catch {
-      setCopied(false)
-    }
-  }
-
   return (
     <section id={id} className="mt-auto bg-crimson text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-20 sm:px-8 sm:py-24 md:flex-row md:items-center md:justify-between">
@@ -46,12 +33,17 @@ export default function JoinCTA({
             ))
           ) : (
             <>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-primary">
+              <a
+                href={DISCORD_INVITE}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+              >
+                Join Discord
+              </a>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-ghost text-white">
                 Email us
               </a>
-              <button type="button" onClick={copyEmail} className="btn-ghost text-white">
-                {copied ? 'Copied' : 'Copy email'}
-              </button>
             </>
           )}
         </div>

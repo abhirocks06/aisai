@@ -44,7 +44,7 @@ export default function Resources() {
 
       <JoinCTA
         title="New members always welcome."
-        description="No CS or AI background required. Email us to join the mailing list or ask about meetings."
+        description="No CS or AI background required. Join the Discord for meetings, updates, and discussion."
       />
     </div>
   )
