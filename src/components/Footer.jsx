@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const socialLinks = [
   {
@@ -31,23 +31,33 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const { pathname } = useLocation()
+
   return (
     <footer className="border-t border-line bg-cream">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-3">
+        <Link
+          to="/"
+          className="flex select-none items-center gap-3 no-underline"
+          onClick={(event) => {
+            if (pathname === '/') {
+              event.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
+        >
           <img
             src="/aisai-logo-crimson.png"
             alt=""
             width={36}
             height={36}
-            className="h-9 w-9 shrink-0 object-contain"
+            draggable={false}
+            className="pointer-events-none h-9 w-9 shrink-0 object-contain"
           />
-          <div>
-            <p className="text-sm font-medium text-ink">
-              AI Safety & Alignment Initiative (AISAI)
-            </p>
-          </div>
-        </div>
+          <span className="text-sm font-medium text-ink">
+            AI Safety & Alignment Initiative (AISAI)
+          </span>
+        </Link>
         <nav className="flex gap-6 text-sm text-muted" aria-label="Footer">
           <Link to="/editorial" className="no-underline hover:text-ink">
             Editorial

@@ -122,7 +122,7 @@ export default function Navbar() {
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-5 sm:px-8">
           <Link
             to="/"
-            className="flex items-center gap-1.5 no-underline"
+            className="flex select-none items-center gap-1.5 no-underline"
             onClick={() => {
               if (location.pathname === '/') setOpen(false)
             }}
@@ -132,7 +132,8 @@ export default function Navbar() {
               alt=""
               width={32}
               height={32}
-              className="h-8 w-8 object-contain"
+              draggable={false}
+              className="pointer-events-none h-8 w-8 object-contain"
             />
             <span className="text-base font-semibold tracking-tight text-ink">AISAI</span>
           </Link>

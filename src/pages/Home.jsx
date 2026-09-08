@@ -49,7 +49,8 @@ export default function Home() {
             alt="AISAI logo"
             width={320}
             height={320}
-            className="animate-rise-delay h-56 w-56 object-contain sm:h-72 sm:w-72 lg:h-80 lg:w-80"
+            draggable={false}
+            className="animate-rise-delay pointer-events-none h-56 w-56 select-none object-contain sm:h-72 sm:w-72 lg:h-80 lg:w-80"
           />
         </div>
       </section>
