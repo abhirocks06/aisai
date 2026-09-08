@@ -32,7 +32,7 @@ export default function Home() {
               Initiative
             </h1>
             <p className="animate-rise-delay mt-6 max-w-md text-base leading-relaxed text-white/75 sm:text-lg">
-              A community at Indiana University ensuring AI is developed to the benefit of our future.
+              A community at Indiana University working to ensure AI benefits humanity.
             </p>
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap justify-center gap-3 lg:justify-start">
               <a href="#join" className="btn-primary">

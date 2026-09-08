@@ -43,7 +43,7 @@ export default function Resources() {
       </section>
 
       <JoinCTA
-        title="Want to discuss these with us?"
+        title="New members always welcome."
         description="No CS or AI background required. Email us to join the mailing list or ask about meetings."
       />
     </div>
