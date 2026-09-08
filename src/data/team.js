@@ -14,7 +14,17 @@ export const teamMembers = [
   },
   {
     name: 'Name TBD',
+    role: 'Vice President',
+    blurb: 'Placeholder: leadership bio coming soon.',
+  },
+  {
+    name: 'Name TBD',
     role: 'Treasurer',
+    blurb: 'Placeholder: leadership bio coming soon.',
+  },
+  {
+    name: 'Name TBD',
+    role: 'Events Lead',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {

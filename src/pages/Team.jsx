@@ -50,11 +50,11 @@ export default function Team() {
             Officers & staff writers
           </h2>
 
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {teamMembers.map((member, index) => (
               <li
                 key={`${member.role}-${index}`}
-                className="flex flex-col items-start border border-line p-5 text-left sm:p-6"
+                className="flex flex-col items-center border border-line p-5 text-center sm:p-6"
               >
                 {member.photo ? (
                   <img
