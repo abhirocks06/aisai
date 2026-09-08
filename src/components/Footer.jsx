@@ -38,7 +38,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 sm:px-8 md:flex-row md:items-center md:justify-between">
         <Link
           to="/"
-          className="flex select-none items-center gap-3 no-underline"
+          className="flex select-none items-center gap-1.5 no-underline"
           onClick={(event) => {
             if (pathname === '/') {
               event.preventDefault()
