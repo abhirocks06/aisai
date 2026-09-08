@@ -6,7 +6,7 @@ const socialLinks = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/143631076',
     icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[1.125rem] w-[1.125rem] fill-current">
         <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0z" />
       </svg>
     ),
@@ -18,7 +18,7 @@ const socialLinks = [
       <svg
         viewBox="0 -28.5 256 256"
         aria-hidden="true"
-        className="h-5 w-5 fill-current"
+        className="h-[1.25rem] w-[1.25rem] fill-current"
         preserveAspectRatio="xMidYMid"
       >
         <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" />
@@ -32,7 +32,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-line bg-cream">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 sm:px-8 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 py-6 text-center sm:px-8 md:flex-row md:items-center md:justify-between md:text-left">
         <Link
           to="/"
           className="flex select-none items-center gap-1.5 no-underline"
@@ -55,7 +55,7 @@ export default function Footer() {
             AI Safety & Alignment Initiative (AISAI)
           </span>
         </Link>
-        <nav className="flex gap-6 text-sm text-muted" aria-label="Footer">
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted md:justify-start" aria-label="Footer">
           <Link to="/editorial" className="no-underline hover:text-ink">
             Editorial
           </Link>
@@ -73,12 +73,12 @@ export default function Footer() {
           </a>
         </nav>
       </div>
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 border-t border-line/70 px-5 py-4 sm:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-t border-line/70 px-5 py-5 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
         <p className="text-xs leading-relaxed text-muted">
           This is a student-run organization and is not
           <br className="sm:hidden" /> an official website of Indiana University.
         </p>
-        <nav className="flex shrink-0 items-center gap-3" aria-label="Social">
+        <nav className="flex shrink-0 items-center justify-center gap-0.5 md:gap-2" aria-label="Social">
           {socialLinks.map((link) => (
             <a
               key={link.label}
@@ -86,7 +86,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label={link.label}
-              className="text-muted transition-colors hover:text-ink"
+              className="inline-flex h-9 w-8 items-center justify-center text-muted transition-colors hover:text-ink md:w-9"
             >
               {link.icon}
             </a>
