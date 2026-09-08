@@ -8,11 +8,11 @@ const activities = [
   },
   {
     title: 'Editorial',
-    copy: 'A student-run publication where members write on AI ethics, governance, and alignment.',
+    copy: 'Our student-run publication where staff writers author pieces on AI policy, technical research, and philosophy.',
   },
   {
     title: 'Deep Dives',
-    copy: 'Members pick a topic, dig into it, and teach what they learned to the rest of the group.',
+    copy: 'Each member researches an AI safety topic or event in depth, then teaches their findings to the club.',
   },
   {
     title: 'Project Labs',

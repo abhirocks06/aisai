@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { CONTACT_EMAIL } from '../data/posts'
 
 const socialActions = [
-  { label: 'Follow on LinkedIn', href: 'https://www.linkedin.com/', primary: true },
+  { label: 'Follow on LinkedIn', href: 'https://www.linkedin.com/company/143631076', primary: true },
   { label: 'Follow on X', href: 'https://x.com/', primary: false },
 ]
 
