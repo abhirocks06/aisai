@@ -4,7 +4,7 @@ import JoinCTA from '../components/JoinCTA'
 const activities = [
   {
     title: 'Discussions',
-    copy: 'We meet to talk through new research, model releases, and what they mean for AI safety and policy.',
+    copy: 'Weekly meetings to talk through new research, model releases, and what they mean for AI safety and policy.',
   },
   {
     title: 'Editorial',
