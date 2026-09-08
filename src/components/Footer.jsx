@@ -65,6 +65,9 @@ export default function Footer() {
           <Link to="/events" className="no-underline hover:text-ink">
             Events
           </Link>
+          <Link to="/resources" className="no-underline hover:text-ink">
+            Resources
+          </Link>
           <Link to="/team" className="no-underline hover:text-ink">
             Team
           </Link>

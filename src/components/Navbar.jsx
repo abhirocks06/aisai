@@ -6,6 +6,7 @@ import { CONTACT_EMAIL } from '../data/posts'
 const links = [
   { to: '/editorial', label: 'Editorial' },
   { to: '/events', label: 'Events' },
+  { to: '/resources', label: 'Resources' },
   { to: '/team', label: 'Team' },
 ]
 

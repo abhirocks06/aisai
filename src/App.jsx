@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Events from './pages/Events'
 import Editorial from './pages/Editorial'
 import EditorialPost from './pages/EditorialPost'
+import Resources from './pages/Resources'
 import Team from './pages/Team'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="events" element={<Events />} />
         <Route path="editorial" element={<Editorial />} />
         <Route path="editorial/:slug" element={<EditorialPost />} />
+        <Route path="resources" element={<Resources />} />
         <Route path="team" element={<Team />} />
       </Route>
     </Routes>
