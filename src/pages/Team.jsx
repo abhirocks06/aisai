@@ -17,7 +17,7 @@ export default function Team() {
             alt={facultyAdvisor.name}
             width={224}
             height={280}
-            className="aspect-[4/5] w-full object-cover object-[54%_top] md:aspect-auto md:h-[17.5rem] md:w-56"
+            className="aspect-[4/5] w-full object-cover object-[65%_top] md:aspect-auto md:h-[17.5rem] md:w-56"
           />
           <div className="mt-6 flex flex-col justify-center md:mt-0">
             <h2 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">
