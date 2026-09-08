@@ -78,8 +78,8 @@ export default function Editorial() {
       </section>
 
       <JoinCTA
-        title="Interested in becoming a staff writer?"
-        description="If you’re interested in writing for the Editorial, apply."
+        title="Stay in the loop."
+        description="Subscribe for new Editorial pieces and announcements."
       />
     </div>
   )

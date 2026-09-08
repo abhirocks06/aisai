@@ -122,7 +122,7 @@ export default function Navbar() {
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-5 sm:px-8">
           <Link
             to="/"
-            className="flex items-center gap-2.5 no-underline"
+            className="flex items-center gap-1.5 no-underline"
             onClick={() => {
               if (location.pathname === '/') setOpen(false)
             }}

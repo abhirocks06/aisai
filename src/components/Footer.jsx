@@ -33,21 +33,18 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-cream">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:px-8 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
           <img
             src="/aisai-logo-crimson.png"
             alt=""
-            width={44}
-            height={44}
-            className="h-11 w-11 shrink-0 object-contain"
+            width={36}
+            height={36}
+            className="h-9 w-9 shrink-0 object-contain"
           />
           <div>
             <p className="text-sm font-medium text-ink">
               AI Safety & Alignment Initiative (AISAI)
-            </p>
-            <p className="mt-1 text-sm text-muted">
-              Indiana University Bloomington
             </p>
           </div>
         </div>
@@ -68,7 +65,8 @@ export default function Footer() {
       </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 border-t border-line/70 px-5 py-4 sm:px-8">
         <p className="text-xs leading-relaxed text-muted">
-          This is a student-run organization and is not an official website of Indiana University.
+          This is a student-run organization and is not
+          <br className="sm:hidden" /> an official website of Indiana University.
         </p>
         <nav className="flex shrink-0 items-center gap-3" aria-label="Social">
           {socialLinks.map((link) => (
