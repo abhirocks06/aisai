@@ -32,10 +32,10 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-line bg-cream">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 py-6 text-center sm:px-8 md:flex-row md:items-center md:justify-between md:text-left">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-6 text-center sm:px-8 md:flex-row md:items-center md:justify-between md:gap-4 md:text-left">
         <Link
           to="/"
-          className="flex select-none items-center gap-1.5 no-underline"
+          className="mb-1 flex select-none items-center gap-1.5 no-underline md:mb-0"
           onClick={(event) => {
             if (pathname === '/') {
               event.preventDefault()
