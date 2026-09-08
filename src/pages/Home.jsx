@@ -26,7 +26,7 @@ export default function Home() {
       <section className="bg-crimson text-white">
         <div className="mx-auto grid max-w-6xl items-center justify-items-center gap-12 px-5 py-24 text-center sm:px-8 sm:py-28 lg:grid-cols-[1fr_auto] lg:justify-items-stretch lg:gap-20 lg:py-32 lg:text-left">
           <div className="flex flex-col items-center lg:items-start">
-            <h1 className="animate-rise text-[2.4rem] font-medium leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.15rem]">
+            <h1 className="animate-rise text-[2rem] font-medium leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.15rem]">
               AI Safety & Alignment
               <br />
               Initiative
@@ -56,16 +56,21 @@ export default function Home() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-2xl space-y-5 px-5 py-20 text-lg leading-[1.75] text-ink-soft sm:px-8 sm:py-24 sm:text-xl sm:leading-[1.8]">
-          <p>
-            As AI systems grow more capable, ensuring they remain safe, controllable, and aligned
-            with human interests is one of the most consequential open problems of this decade.
-          </p>
-          <p>
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[16rem_1fr] lg:gap-[13rem]">
+          <h2 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+            Our Mission
+          </h2>
+          <div className="max-w-3xl space-y-5 text-lg leading-[1.75] text-ink-soft sm:text-xl sm:leading-[1.8]">
+            <p>
+              As AI systems grow more capable, ensuring they remain safe, controllable, and aligned
+              with human interests is one of the most consequential open problems of this decade.
+            </p>
+            <p>
               The AI Safety & Alignment Initiative (AISAI) is a student-run interdisciplinary hub
               for IUB students across computer science, philosophy, policy, and beyond to think
               seriously about the technical and governance challenges of advanced AI.
-          </p>
+            </p>
+          </div>
         </div>
       </section>
 

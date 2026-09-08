@@ -22,7 +22,7 @@ export default function EditorialPost() {
   return (
     <article className="bg-paper">
       <header className="mx-auto max-w-3xl px-5 pt-16 sm:px-8 sm:pt-20">
-        <time dateTime={post.date} className="animate-rise block text-sm text-muted">
+        <time dateTime={post.date} className="animate-rise block text-sm text-crimson">
           {formatPostDate(post.date)}
         </time>
         <h1 className="animate-rise-delay mt-3 text-3xl font-medium tracking-tight text-ink sm:text-4xl">
