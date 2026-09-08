@@ -12,13 +12,12 @@ export default function Team() {
 
       <section className="mx-auto w-full max-w-6xl px-5 py-12 text-left sm:px-8 sm:py-16">
         <div className="animate-rise-delay border border-line p-6 sm:p-8 md:grid md:grid-cols-[14rem_1fr] md:gap-10 md:p-10">
-          <img
-            src={facultyAdvisor.photo}
-            alt={facultyAdvisor.name}
-            width={224}
-            height={280}
-            className="aspect-[4/5] w-full object-cover object-[65%_top] md:aspect-auto md:h-[17.5rem] md:w-56"
-          />
+          <div
+            className="flex aspect-[4/5] w-full items-center justify-center bg-cream text-sm text-muted md:aspect-auto md:h-[17.5rem] md:w-56"
+            aria-hidden="true"
+          >
+            Photo
+          </div>
           <div className="mt-6 flex flex-col justify-center md:mt-0">
             <h2 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">
               {facultyAdvisor.name}
