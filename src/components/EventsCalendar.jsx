@@ -96,7 +96,7 @@ export default function EventsCalendar() {
             return (
               <div
                 key={`empty-${index}`}
-                className="min-h-16 border-b border-r border-line bg-paper sm:min-h-20"
+                className="min-h-16 border-b border-r border-line bg-paper sm:min-h-24"
               />
             )
           }
@@ -104,7 +104,8 @@ export default function EventsCalendar() {
           const key = toDateKey(date)
           const isToday = key === toDateKey(today)
           const isSelected = key === selected
-          const hasEvents = getEventsForDate(key).length > 0
+          const dayEvents = getEventsForDate(key)
+          const hasEvents = dayEvents.length > 0
 
           return (
             <button
@@ -112,20 +113,27 @@ export default function EventsCalendar() {
               type="button"
               onClick={() => setSelected(key)}
               className={[
-                'flex min-h-16 flex-col items-start gap-1 border-b border-r border-line px-2 py-2 text-left transition-colors sm:min-h-20',
-                isSelected ? 'bg-cream' : 'bg-paper hover:bg-cream/60',
+                'flex min-h-16 flex-col items-start gap-1 border-b border-r border-line px-2 py-2 text-left transition-colors sm:min-h-24',
+                isSelected ? 'bg-cream' : hasEvents ? 'bg-crimson/[0.04] hover:bg-cream/60' : 'bg-paper hover:bg-cream/60',
               ].join(' ')}
             >
               <span
                 className={[
                   'inline-flex h-7 w-7 items-center justify-center text-sm',
-                  isToday ? 'bg-crimson font-medium text-white' : 'text-ink',
+                  isToday
+                    ? 'rounded-full bg-crimson font-medium text-white'
+                    : hasEvents
+                      ? 'font-medium text-crimson'
+                      : 'text-ink',
                 ].join(' ')}
               >
                 {date.getDate()}
               </span>
               {hasEvents && (
-                <span className="mt-auto h-1 w-1 bg-crimson" aria-hidden="true" />
+                <span className="mt-auto line-clamp-2 w-full text-left text-[0.65rem] leading-snug text-crimson sm:text-xs">
+                  {dayEvents[0].title}
+                  {dayEvents.length > 1 ? ` +${dayEvents.length - 1}` : ''}
+                </span>
               )}
             </button>
           )
@@ -144,17 +152,16 @@ export default function EventsCalendar() {
         {selectedEvents.length === 0 ? (
           <p className="mt-3 text-base text-ink-soft">No events on this day.</p>
         ) : (
-          <ul className="mt-4 space-y-4">
-            {selectedEvents.map((event) => (
-              <li key={event.id}>
-                <p className="text-lg font-medium tracking-tight text-ink">{event.title}</p>
-                {(event.time || event.location) && (
-                  <p className="mt-1 text-sm text-muted">
-                    {[event.time, event.location].filter(Boolean).join(' · ')}
-                  </p>
-                )}
-              </li>
-            ))}
+          <ul className="mt-3 space-y-2 text-base text-ink-soft">
+            {selectedEvents.map((event) => {
+              const details = [event.time, event.location].filter(Boolean).join(' · ')
+              return (
+                <li key={event.id}>
+                  • {event.title}
+                  {details ? ` - ${details}` : ''}
+                </li>
+              )
+            })}
           </ul>
         )}
       </div>
