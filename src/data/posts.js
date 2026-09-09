@@ -3,6 +3,8 @@ export const DISCORD_INVITE = 'https://discord.gg/4bjyeXK83'
 
 export const topics = ['Technical', 'Policy', 'Philosophy']
 
+const placeholderBody = ['Placeholder text example.']
+
 export const posts = [
   {
     slug: 'openai-huggingface-security-incident',
@@ -11,9 +13,7 @@ export const posts = [
     topics: ['Technical'],
     excerpt:
       'What a documented lab security failure reveals about evaluation setups, containment, and disclosure.',
-    body: [
-      'Placeholder article. Full analysis coming soon.',
-    ],
+    body: placeholderBody,
   },
   {
     slug: 'sanders-ban-ai-development-bill',
@@ -22,9 +22,7 @@ export const posts = [
     topics: ['Policy'],
     excerpt:
       'A proposal to stop advanced AI development: what it bans, how it would be enforced, and what happens if others don’t follow.',
-    body: [
-      'Placeholder article. Full analysis coming soon.',
-    ],
+    body: placeholderBody,
   },
   {
     slug: 'open-weights-ai-policy',
@@ -33,9 +31,7 @@ export const posts = [
     topics: ['Policy'],
     excerpt:
       'Open-weight releases widen access and scrutiny, but make misuse and controls harder to manage.',
-    body: [
-      'Placeholder article. Full analysis coming soon.',
-    ],
+    body: placeholderBody,
   },
   {
     slug: 'european-ai-policy-landscape',
@@ -44,9 +40,7 @@ export const posts = [
     topics: ['Policy'],
     excerpt:
       'How Europe’s AI rules and institutions are reshaping the global governance race.',
-    body: [
-      'Placeholder article. Full analysis coming soon.',
-    ],
+    body: placeholderBody,
   },
   {
     slug: 'rlhf-fundamentals',
@@ -55,9 +49,7 @@ export const posts = [
     topics: ['Technical'],
     excerpt:
       'How Reinforcement Learning from Human Feedback shapes modern assistants, and where it breaks down.',
-    body: [
-      'Placeholder article. Full analysis coming soon.',
-    ],
+    body: placeholderBody,
   },
   {
     slug: 'superalignment-as-a-problem',
@@ -66,9 +58,7 @@ export const posts = [
     topics: ['Technical'],
     excerpt:
       'How do you align systems that may be smarter than the humans overseeing them?',
-    body: [
-      'Placeholder article. Full analysis coming soon.',
-    ],
+    body: placeholderBody,
   },
 ]
 
