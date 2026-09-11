@@ -8,7 +8,7 @@ const activities = [
   },
   {
     title: 'Editorial',
-    copy: 'A student-run publication on live issues in AI safety research, industry incidents, and emerging regulation.',
+    copy: 'A student-run publication covering open questions, industry incidents, and emerging regulation.',
   },
   {
     title: 'Deep Dives',
