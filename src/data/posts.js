@@ -1,7 +1,7 @@
 export const CONTACT_EMAIL = 'absiso@iu.edu'
 export const DISCORD_INVITE = 'https://discord.gg/4bjyeXK83'
 
-export const topics = ['Technical', 'Policy', 'Philosophy']
+export const topics = ['Technical', 'Policy']
 
 const placeholderBody = ['Placeholder text example.']
 

@@ -3,20 +3,20 @@ import JoinCTA from '../components/JoinCTA'
 
 const activities = [
   {
-    title: 'Discussions',
-    copy: 'Weekly meetings to talk through new research, model releases, and what they mean for AI safety and policy.',
+    title: 'Discussion Meetings',
+    copy: 'Weekly meetings to talk through new research, model releases, and what they signal about AI capabilities.',
   },
   {
     title: 'Editorial',
-    copy: 'Our student-run publication where staff writers author pieces on AI policy, technical research, and philosophy.',
+    copy: 'A student-run publication on live issues in AI safety research, industry incidents, and emerging regulation.',
   },
   {
     title: 'Deep Dives',
     copy: 'Each member researches an AI safety topic or event in depth, then teaches their findings to the club.',
   },
   {
-    title: 'Project Labs',
-    copy: 'Small teams work on hands-on projects spanning technical research and policy questions.',
+    title: 'Research Projects',
+    copy: 'Semester-long team projects covering topics like alignment, interpretability, evaluations, and federal/state policy.',
   },
 ]
 
