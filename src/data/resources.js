@@ -3,6 +3,11 @@ export const resourceSections = [
     title: 'Foundations',
     items: [
       {
+        title: 'Machines of Loving Grace',
+        href: 'https://darioamodei.com/essay/machines-of-loving-grace',
+        description: 'Dario Amodei on how powerful AI could transform the world for the better.',
+      },
+      {
         title: 'Instrumental Convergence',
         href: 'https://www.youtube.com/watch?v=ZeecOKBus3Q',
         description: 'Rob Miles on why many goals push systems toward power-seeking.',
@@ -12,11 +17,6 @@ export const resourceSections = [
         href: 'https://www.youtube.com/watch?v=qV_rOlHjvvs',
         description:
           'Rational Animations on reward hacking and specification gaming in a real model.',
-      },
-      {
-        title: 'Machines of Loving Grace',
-        href: 'https://darioamodei.com/essay/machines-of-loving-grace',
-        description: 'Dario Amodei on how powerful AI could transform the world for the better.',
       },
       {
         title: 'AGI Safety from First Principles: Introduction',
@@ -50,20 +50,42 @@ export const resourceSections = [
     title: 'Governance & Strategy',
     items: [
       {
-        title: 'The Adolescence of Technology',
-        href: 'https://darioamodei.com/essay/the-adolescence-of-technology',
-        description: 'Dario Amodei on the risks of powerful AI and how to confront them.',
-      },
-      {
         title: 'Unresolved Debates About the Future of AI',
         href: 'https://helentoner.substack.com/p/unresolved-debates-about-the-future',
         description:
           'Helen Toner on key disagreements shaping AI governance and long-term safety.',
       },
       {
+        title: 'The Adolescence of Technology',
+        href: 'https://darioamodei.com/essay/the-adolescence-of-technology',
+        description: 'Dario Amodei on the risks of powerful AI and how to confront them.',
+      },
+      {
         title: 'Situational Awareness: The Decade Ahead',
         href: 'https://situational-awareness.ai/',
         description: 'Leopold Aschenbrenner’s essay on AGI timelines and national security.',
+      },
+    ],
+  },
+  {
+    title: 'Books',
+    items: [
+      {
+        title: 'The Alignment Problem',
+        href: 'https://brianchristian.org/the-alignment-problem/',
+        description: 'Brian Christian on how machine learning systems go wrong in practice.',
+      },
+      {
+        title: 'Superintelligence',
+        href: 'https://global.oup.com/academic/product/superintelligence-9780198739838',
+        description:
+          'Nick Bostrom’s classic on paths to advanced AI and the strategic challenges of controlling it.',
+      },
+      {
+        title: 'If Anyone Builds It, Everyone Dies',
+        href: 'https://ifanyonebuildsit.com/',
+        description:
+          'Eliezer Yudkowsky and Nate Soares on why racing to superhuman AI is an extinction risk.',
       },
     ],
   },
@@ -91,14 +113,14 @@ export const resourceSections = [
         description: 'Free courses and talent programs for people entering AI safety and governance.',
       },
       {
-        title: 'SPAR',
-        href: 'https://sparai.org/',
-        description: 'A part-time remote research fellowship pairing mentees with AI safety mentors.',
-      },
-      {
         title: 'ARENA',
         href: 'https://www.arena.education/',
         description: 'Hands-on ML engineering and interpretability training for alignment work.',
+      },
+      {
+        title: 'SPAR',
+        href: 'https://sparai.org/',
+        description: 'A part-time remote research fellowship pairing mentees with AI safety mentors.',
       },
       {
         title: '80,000 Hours Job Board',
