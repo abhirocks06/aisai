@@ -16,7 +16,7 @@ const activities = [
   },
   {
     title: 'Research Projects',
-    copy: 'Semester-long team projects covering topics like alignment, interpretability, evaluations, and federal/state policy.',
+    copy: 'Semester-long team projects covering alignment, interpretability, evaluations, and federal/state policy.',
   },
 ]
 
