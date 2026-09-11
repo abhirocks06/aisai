@@ -67,7 +67,7 @@ export default function Home() {
             </p>
             <p>
               The AI Safety & Alignment Initiative (AISAI) is a student-run interdisciplinary hub
-              for IUB students across computer science, philosophy, policy, and beyond to think
+              for IUB students across computer science, philosophy, economics, and beyond to think
               seriously about the technical and governance challenges of advanced AI.
             </p>
           </div>
