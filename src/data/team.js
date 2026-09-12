@@ -14,12 +14,12 @@ export const officers = [
   },
   {
     name: 'TBD',
-    role: 'Treasurer',
+    role: 'Programming Lead',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {
     name: 'TBD',
-    role: 'Events Lead',
+    role: 'Treasurer',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {
