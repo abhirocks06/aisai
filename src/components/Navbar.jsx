@@ -147,8 +147,10 @@ export default function Navbar() {
                 end={link.end}
                 className={({ isActive }) =>
                   [
-                    'text-sm no-underline transition-colors',
-                    isActive ? 'text-ink' : 'text-muted hover:text-ink',
+                    'border-b-2 py-1 text-sm tracking-wide no-underline transition-colors',
+                    isActive
+                      ? 'border-crimson text-crimson'
+                      : 'border-transparent text-ink hover:text-crimson',
                   ].join(' ')
                 }
               >

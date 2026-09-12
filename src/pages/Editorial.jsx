@@ -55,15 +55,9 @@ export default function Editorial() {
                   to={`/editorial/${post.slug}`}
                   className="flex h-full flex-col border border-line p-6 no-underline transition-opacity hover:opacity-70 sm:p-7"
                 >
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                    <time dateTime={post.date} className="text-muted">
-                      {formatPostDate(post.date)}
-                    </time>
-                    <span className="text-muted" aria-hidden="true">
-                      ·
-                    </span>
-                    <span className="text-crimson">{post.topics.join(', ')}</span>
-                  </div>
+                  <time dateTime={post.date} className="text-sm text-muted">
+                    {formatPostDate(post.date)}
+                  </time>
                   <h2 className="mt-3 text-xl font-medium tracking-tight text-ink">
                     {post.title}
                   </h2>

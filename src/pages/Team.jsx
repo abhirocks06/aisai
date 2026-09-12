@@ -40,12 +40,22 @@ export default function Team() {
           <h2 className="text-2xl font-medium tracking-tight text-ink">Faculty Advisor</h2>
 
           <div className="mt-8 border border-line p-6 sm:p-8 md:grid md:grid-cols-[14rem_1fr] md:gap-10 md:p-10">
-            <div
-              className="flex aspect-[4/5] w-full items-center justify-center bg-cream text-sm text-muted md:aspect-auto md:h-[17.5rem] md:w-56"
-              aria-hidden="true"
-            >
-              Photo
-            </div>
+            {facultyAdvisor.photo ? (
+              <img
+                src={facultyAdvisor.photo}
+                alt={facultyAdvisor.name}
+                width={448}
+                height={560}
+                className="aspect-[4/5] w-full object-cover object-[62%_center] md:aspect-auto md:h-[17.5rem] md:w-56"
+              />
+            ) : (
+              <div
+                className="flex aspect-[4/5] w-full items-center justify-center bg-cream text-sm text-muted md:aspect-auto md:h-[17.5rem] md:w-56"
+                aria-hidden="true"
+              >
+                Photo
+              </div>
+            )}
             <div className="mt-6 flex flex-col justify-center md:mt-0">
               <h3 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                 {facultyAdvisor.name}
