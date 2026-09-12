@@ -6,15 +6,10 @@ export const facultyAdvisor = {
   website: 'https://calum-mcnamara.github.io/',
 }
 
-export const teamMembers = [
+export const officers = [
   {
     name: 'Abhinav Sisodiya',
     role: 'President',
-    blurb: 'Placeholder: leadership bio coming soon.',
-  },
-  {
-    name: 'TBD',
-    role: 'Vice President',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {
@@ -32,19 +27,27 @@ export const teamMembers = [
     role: 'Media Lead',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
+]
+
+export const staffWriters = [
   {
     name: 'TBD',
-    role: 'Staff Writer',
+    role: 'Technical Staff Writer',
     blurb: 'Placeholder: editorial roster coming soon.',
   },
   {
     name: 'TBD',
-    role: 'Staff Writer',
+    role: 'Policy Staff Writer',
     blurb: 'Placeholder: editorial roster coming soon.',
   },
   {
     name: 'TBD',
-    role: 'Staff Writer',
+    role: 'Economics Staff Writer',
+    blurb: 'Placeholder: editorial roster coming soon.',
+  },
+  {
+    name: 'TBD',
+    role: 'Philosophy Staff Writer',
     blurb: 'Placeholder: editorial roster coming soon.',
   },
 ]

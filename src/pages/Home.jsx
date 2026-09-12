@@ -4,19 +4,19 @@ import JoinCTA from '../components/JoinCTA'
 const activities = [
   {
     title: 'Discussion Meetings',
-    copy: 'Weekly meetings to talk through new research, model releases, and what they signal about AI capabilities.',
+    copy: 'Weekly meetings to talk through new developments and what they signal about AI capabilities.',
   },
   {
     title: 'Editorial',
-    copy: 'A student-run publication covering open questions, industry incidents, and emerging regulation.',
+    copy: 'A student-run publication examining the technical and governance debates shaping AI right now.',
   },
   {
     title: 'Deep Dives',
-    copy: 'Each member researches an AI safety topic or event in depth, then teaches their findings to the club.',
+    copy: 'Members pick an open question, research it in depth, then share their findings with the club.',
   },
   {
     title: 'Research Projects',
-    copy: 'Semester-long team projects covering alignment, interpretability, evaluations, and federal/state policy.',
+    copy: 'Semester-long team projects on alignment, interpretability, evaluations, or federal/state policy.',
   },
 ]
 
@@ -67,8 +67,8 @@ export default function Home() {
             </p>
             <p>
               The AI Safety & Alignment Initiative (AISAI) is a student-run interdisciplinary hub
-              for IUB students across computer science, philosophy, economics, and beyond to think
-              seriously about the technical and governance challenges of advanced AI.
+              for IUB students across computer science, philosophy, economics, and beyond to take on
+              the technical and governance challenges of advanced AI.
             </p>
           </div>
         </div>
