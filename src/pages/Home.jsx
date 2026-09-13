@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import JoinCTA from '../components/JoinCTA'
+import { DISCORD_INVITE } from '../data/posts'
 
 const activities = [
   {
@@ -35,8 +36,13 @@ export default function Home() {
               A community at Indiana University working to ensure advanced AI benefits humanity.
             </p>
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <a href="#join" className="btn-primary">
-                Get Involved
+              <a
+                href={DISCORD_INVITE}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+              >
+                Join Discord
               </a>
               <Link to="/editorial" className="btn-ghost text-white">
                 Read Our Editorial
