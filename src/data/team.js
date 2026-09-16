@@ -16,7 +16,7 @@ export const officers = [
   },
   {
     name: 'TBD',
-    role: 'Programming Lead',
+    role: 'Event Manager',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {
