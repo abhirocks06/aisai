@@ -13,12 +13,12 @@ const activities = [
     copy: 'A student-run publication examining the technical and governance debates shaping AI right now.',
   },
   {
-    title: 'Deep Dives',
-    copy: 'Members pick an open question, research it in depth, then share their findings with the club.',
+    title: 'Research Projects',
+    copy: 'Semester-long team projects on alignment, interpretability, evaluations, and federal/state policy.',
   },
   {
-    title: 'Research Projects',
-    copy: 'Semester-long team projects on alignment, interpretability, evaluations, or federal/state policy.',
+    title: 'Community Events',
+    copy: 'Expert speaker panels, workshops, and other gatherings that bring the AISI community together.',
   },
 ]
 
@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <section className="bg-crimson text-white">
-        <div className="mx-auto grid max-w-6xl items-center justify-items-center gap-12 px-5 py-24 text-center sm:px-8 sm:py-28 lg:grid-cols-[1fr_auto] lg:justify-items-stretch lg:gap-20 lg:py-32 lg:text-left">
+        <div className="mx-auto grid max-w-6xl items-center justify-items-center gap-12 px-5 pt-16 pb-24 text-center sm:px-8 sm:pt-20 sm:pb-28 lg:grid-cols-[1fr_auto] lg:justify-items-stretch lg:gap-20 lg:pt-24 lg:pb-32 lg:text-left">
           <div className="flex flex-col items-center lg:items-start">
             <h1 className="animate-rise text-[2rem] font-medium leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.15rem]">
               AI Safety Initiative
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-neutral-50">
+      <section className="bg-neutral-100">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <h2 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">What We Do</h2>
 

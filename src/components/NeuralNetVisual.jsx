@@ -24,7 +24,6 @@ function buildFrame(seed, focusCol) {
       const ridge = Math.exp(-(dx * dx * 18 + dy * dy * 6))
       const noise = rand()
       const base = noise * 0.35 + ridge * 0.55
-      // Sparse “firing” units — most stay quiet
       const sparse = noise > 0.72 ? noise * 0.5 : 0
       const value = Math.min(1, base * 0.65 + sparse)
       cells.push(value)
@@ -87,7 +86,6 @@ export default function NeuralNetVisual({ className = '' }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Panel frame */}
         <rect
           x="8"
           y="10"
@@ -117,7 +115,6 @@ export default function NeuralNetVisual({ className = '' }) {
           )
         })}
 
-        {/* Readout bar */}
         <text
           x={padX}
           y={height - 14}

@@ -33,7 +33,7 @@ export default function Editorial() {
                 aria-selected={isActive}
                 onClick={() => setActive(filter)}
                 className={[
-                  'text-sm transition-colors',
+                  'text-sm transition-colors sm:text-base',
                   isActive ? 'font-medium text-ink' : 'text-muted hover:text-ink',
                 ].join(' ')}
               >

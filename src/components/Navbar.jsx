@@ -10,7 +10,8 @@ const links = [
   { to: '/team', label: 'Team' },
 ]
 
-function BurgerButton({ open, onClick }) {
+function BurgerButton({ open, onClick, onCrimson }) {
+  const bar = onCrimson ? 'bg-white' : 'bg-ink'
   return (
     <button
       type="button"
@@ -21,10 +22,10 @@ function BurgerButton({ open, onClick }) {
       onClick={onClick}
     >
       <span
-        className={`block h-px w-5 origin-center bg-ink transition-all duration-200 ${open ? 'translate-y-[3.5px] rotate-45' : ''}`}
+        className={`block h-px w-5 origin-center transition-all duration-200 ${bar} ${open ? 'translate-y-[3.5px] rotate-45' : ''}`}
       />
       <span
-        className={`block h-px w-5 origin-center bg-ink transition-all duration-200 ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`}
+        className={`block h-px w-5 origin-center transition-all duration-200 ${bar} ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`}
       />
     </button>
   )
@@ -39,7 +40,7 @@ function MobileMenuOverlay({ pathname, onClose }) {
       aria-modal="true"
       aria-label="Mobile navigation"
     >
-      <div className="h-14 shrink-0 border-b border-line" aria-hidden />
+      <div className="h-14 shrink-0 border-b border-line bg-paper" aria-hidden />
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-5 sm:px-8">
         <nav className="flex flex-col gap-5 pt-10" aria-label="Mobile">
           {links.map((link, index) => (
@@ -85,6 +86,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const location = useLocation()
+  const onHome = location.pathname === '/'
+  const onCrimson = onHome && !open
 
   useEffect(() => {
     setMounted(true)
@@ -110,31 +113,38 @@ export default function Navbar() {
   const mobileMenu =
     open && mounted
       ? createPortal(
-          <MobileMenuOverlay pathname={location.pathname} onClose={() => setOpen(false)} />,
+          <MobileMenuOverlay
+            pathname={location.pathname}
+            onClose={() => setOpen(false)}
+          />,
           document.body,
         )
       : null
 
   return (
     <>
-      <header className="relative z-50 bg-paper">
+      <header
+        className={[
+          'relative z-50',
+          onCrimson ? 'bg-crimson text-white' : 'bg-paper text-ink',
+        ].join(' ')}
+      >
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-5 sm:px-8">
           <Link
             to="/"
-            className="flex select-none items-center gap-1.5 no-underline"
+            className="select-none no-underline"
             onClick={() => {
               if (location.pathname === '/') setOpen(false)
             }}
           >
-            <img
-              src="/aisai-logo-crimson.png"
-              alt=""
-              width={32}
-              height={32}
-              draggable={false}
-              className="pointer-events-none h-8 w-8 object-contain"
-            />
-            <span className="text-base font-semibold tracking-tight text-ink">AISI</span>
+            <span
+              className={[
+                'text-xl font-semibold tracking-tight',
+                onCrimson ? 'text-white' : 'text-ink',
+              ].join(' ')}
+            >
+              AISI
+            </span>
           </Link>
 
           <nav className="ml-auto hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -146,7 +156,13 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   [
                     'py-1 text-sm tracking-wide no-underline transition-colors',
-                    isActive ? 'text-crimson' : 'text-ink hover:text-crimson',
+                    onCrimson
+                      ? isActive
+                        ? 'font-medium text-white'
+                        : 'text-white/75 hover:text-white'
+                      : isActive
+                        ? 'text-crimson'
+                        : 'text-ink hover:text-crimson',
                   ].join(' ')
                 }
               >
@@ -155,7 +171,11 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <BurgerButton open={open} onClick={() => setOpen((value) => !value)} />
+          <BurgerButton
+            open={open}
+            onClick={() => setOpen((value) => !value)}
+            onCrimson={onCrimson}
+          />
         </div>
       </header>
       {mobileMenu}
