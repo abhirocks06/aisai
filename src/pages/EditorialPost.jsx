@@ -62,7 +62,7 @@ export default function EditorialPost() {
           <div className="min-w-0 md:max-w-none">
             <h2 className="text-3xl font-medium tracking-tight">More from the Editorial.</h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/70 md:mx-0">
-              Browse other pieces on the debates shaping AI.
+              Analysis from IU students on the technical, policy, and philosophical questions shaping advanced AI.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3 md:justify-end">
