@@ -55,8 +55,6 @@ function MobileMenuOverlay({ pathname, onClose }) {
               }
               style={{ animationDelay: `${0.06 + index * 0.05}s` }}
               onClick={() => {
-                // Keep the overlay up during route changes so the old page
-                // never flashes. Only close immediately when already here.
                 if (pathname === link.to) onClose()
               }}
             >
@@ -72,7 +70,7 @@ function MobileMenuOverlay({ pathname, onClose }) {
           <p className="text-sm text-muted">Indiana University Bloomington</p>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="mt-2 inline-block text-sm text-crimson no-underline hover:opacity-70"
+            className="mt-2 inline-block text-sm font-medium text-crimson no-underline hover:opacity-70"
             onClick={onClose}
           >
             {CONTACT_EMAIL}
@@ -136,7 +134,7 @@ export default function Navbar() {
               draggable={false}
               className="pointer-events-none h-8 w-8 object-contain"
             />
-            <span className="text-base font-semibold tracking-tight text-ink">AISAI</span>
+            <span className="text-base font-semibold tracking-tight text-ink">AISI</span>
           </Link>
 
           <nav className="ml-auto hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -147,10 +145,8 @@ export default function Navbar() {
                 end={link.end}
                 className={({ isActive }) =>
                   [
-                    'border-b-2 py-1 text-sm tracking-wide no-underline transition-colors',
-                    isActive
-                      ? 'border-crimson text-crimson'
-                      : 'border-transparent text-ink hover:text-crimson',
+                    'py-1 text-sm tracking-wide no-underline transition-colors',
+                    isActive ? 'text-crimson' : 'text-ink hover:text-crimson',
                   ].join(' ')
                 }
               >

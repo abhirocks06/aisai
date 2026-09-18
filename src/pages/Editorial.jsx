@@ -19,7 +19,7 @@ export default function Editorial() {
         </h1>
 
         <div
-          className="animate-rise-delay mt-8 flex flex-wrap justify-start gap-x-5 gap-y-2 pl-0.5"
+          className="animate-rise-delay mt-8 flex flex-wrap gap-x-6 gap-y-2"
           role="tablist"
           aria-label="Filter by topic"
         >
@@ -34,7 +34,7 @@ export default function Editorial() {
                 onClick={() => setActive(filter)}
                 className={[
                   'text-sm transition-colors',
-                  isActive ? 'font-medium text-crimson' : 'text-muted hover:text-ink',
+                  isActive ? 'font-medium text-ink' : 'text-muted hover:text-ink',
                 ].join(' ')}
               >
                 {filter}
@@ -44,29 +44,37 @@ export default function Editorial() {
         </div>
       </section>
 
-      <section className="animate-rise-delay-2 mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+      <section className="animate-rise-delay-2 mx-auto w-full max-w-6xl flex-1 px-5 py-10 sm:px-8 sm:py-12">
         {visible.length === 0 ? (
-          <p className="text-muted">No pieces in this topic yet.</p>
+          <p className="border-t border-line py-10 text-muted">No pieces in this topic yet.</p>
         ) : (
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {visible.map((post) => (
-              <li key={post.slug}>
-                <Link
-                  to={`/editorial/${post.slug}`}
-                  className="flex h-full flex-col border border-line p-6 no-underline transition-opacity hover:opacity-70 sm:p-7"
-                >
-                  <time dateTime={post.date} className="text-sm text-muted">
-                    {formatPostDate(post.date)}
-                  </time>
-                  <h2 className="mt-3 text-xl font-medium tracking-tight text-ink">
-                    {post.title}
-                  </h2>
-                  <p className="mt-2 flex-1 text-[0.95rem] leading-relaxed text-muted">
-                    {post.excerpt}
-                  </p>
-                </Link>
-              </li>
-            ))}
+          <ul className="border-t border-line">
+            {visible.map((post) => {
+              const topic = post.topics[0]
+              return (
+                <li key={post.slug} className="border-b border-line">
+                  <Link
+                    to={`/editorial/${post.slug}`}
+                    className="group grid gap-3 py-8 no-underline transition-opacity hover:opacity-70 sm:grid-cols-[11rem_1fr] sm:gap-10 sm:py-10 md:grid-cols-[14rem_1fr]"
+                  >
+                    <div className="flex flex-row items-center gap-3 sm:flex-col sm:items-start sm:gap-1 sm:pt-0.5">
+                      <span className="text-sm font-medium text-ink">{topic}</span>
+                      <time dateTime={post.date} className="text-sm text-crimson">
+                        {formatPostDate(post.date)}
+                      </time>
+                    </div>
+                    <div className="min-w-0">
+                      <h2 className="text-lg font-[450] tracking-tight text-ink sm:text-xl">
+                        {post.title}
+                      </h2>
+                      <p className="mt-2 max-w-3xl text-[0.95rem] leading-relaxed text-ink-soft">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         )}
       </section>

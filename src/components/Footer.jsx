@@ -31,11 +31,11 @@ export default function Footer() {
   const { pathname } = useLocation()
 
   return (
-    <footer className="border-t border-line bg-cream">
+    <footer className="border-t border-line bg-paper">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-6 text-center sm:px-8 md:flex-row md:items-center md:justify-between md:gap-4 md:text-left">
         <Link
           to="/"
-          className="mb-1 flex select-none items-center gap-1.5 no-underline md:mb-0"
+          className="mb-1 flex select-none items-center gap-2 no-underline md:mb-0"
           onClick={(event) => {
             if (pathname === '/') {
               event.preventDefault()
@@ -52,10 +52,13 @@ export default function Footer() {
             className="pointer-events-none h-9 w-9 shrink-0 object-contain"
           />
           <span className="text-sm font-medium text-ink">
-            AI Safety & Alignment Initiative (AISAI)
+            AI Safety Initiative (AISI) at IU Bloomington
           </span>
         </Link>
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted md:justify-start" aria-label="Footer">
+        <nav
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted md:justify-start"
+          aria-label="Footer"
+        >
           <Link to="/editorial" className="no-underline hover:text-ink">
             Editorial
           </Link>

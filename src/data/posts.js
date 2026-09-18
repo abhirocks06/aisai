@@ -21,7 +21,7 @@ export const posts = [
     date: '2027-02-05',
     topics: ['Policy'],
     excerpt:
-      'A proposal to stop advanced AI development: what it bans, how it would be enforced, and what happens if others don’t follow.',
+      'Breaking down Sanders’ bill to ban artificial superintelligence.',
     body: placeholderBody,
   },
   {

@@ -14,7 +14,7 @@ function MemberCard({ member }) {
         />
       ) : (
         <div
-          className="flex aspect-[4/5] w-full items-center justify-center bg-cream text-sm text-muted"
+          className="flex aspect-[4/5] w-full items-center justify-center bg-neutral-100 text-sm text-muted"
           aria-hidden="true"
         >
           Photo
@@ -37,6 +37,26 @@ export default function Team() {
 
       <section className="mx-auto w-full max-w-6xl px-5 py-12 text-left sm:px-8 sm:py-16">
         <div className="animate-rise-delay">
+          <h2 className="text-2xl font-medium tracking-tight text-ink">Executive Board</h2>
+
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {officers.map((member, index) => (
+              <MemberCard key={`${member.role}-${index}`} member={member} />
+            ))}
+          </ul>
+        </div>
+
+        <div className="animate-rise-delay-2 mt-16">
+          <h2 className="text-2xl font-medium tracking-tight text-ink">Editorial Staff</h2>
+
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {staffWriters.map((member, index) => (
+              <MemberCard key={`${member.role}-${index}`} member={member} />
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-16">
           <h2 className="text-2xl font-medium tracking-tight text-ink">Faculty Advisor</h2>
 
           <div className="mt-8 border border-line p-6 sm:p-8 md:grid md:grid-cols-[14rem_1fr] md:gap-10 md:p-10">
@@ -50,7 +70,7 @@ export default function Team() {
               />
             ) : (
               <div
-                className="flex aspect-[4/5] w-full items-center justify-center bg-cream text-sm text-muted md:aspect-auto md:h-[17.5rem] md:w-56"
+                className="flex aspect-[4/5] w-full items-center justify-center bg-neutral-100 text-sm text-muted md:aspect-auto md:h-[17.5rem] md:w-56"
                 aria-hidden="true"
               >
                 Photo
@@ -82,31 +102,11 @@ export default function Team() {
             </div>
           </div>
         </div>
-
-        <div className="animate-rise-delay-2 mt-16">
-          <h2 className="text-2xl font-medium tracking-tight text-ink">Executive Board</h2>
-
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {officers.map((member, index) => (
-              <MemberCard key={`${member.role}-${index}`} member={member} />
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-16">
-          <h2 className="text-2xl font-medium tracking-tight text-ink">Editorial Staff</h2>
-
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {staffWriters.map((member, index) => (
-              <MemberCard key={`${member.role}-${index}`} member={member} />
-            ))}
-          </ul>
-        </div>
       </section>
 
       <JoinCTA
         title="Want to join the team?"
-        description="Officer and staff writer roles fill as we launch. Reach out if you want to help build AISAI."
+        description="Officer and staff writer roles fill as we launch. Reach out if you want to help build AISI."
       />
     </div>
   )

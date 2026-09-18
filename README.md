@@ -1,6 +1,6 @@
-# AISAI Website
+# AISI Website
 
-Multi-page site for the **AI Safety & Alignment Initiative (AISAI)** at Indiana University Bloomington.
+Multi-page site for the **AI Safety Initiative (AISI) @ IU**.
 
 ## Stack
 

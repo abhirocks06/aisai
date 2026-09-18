@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import JoinCTA from '../components/JoinCTA'
+import NeuralNetVisual from '../components/NeuralNetVisual'
 import { DISCORD_INVITE } from '../data/posts'
 
 const activities = [
@@ -28,12 +29,12 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center justify-items-center gap-12 px-5 py-24 text-center sm:px-8 sm:py-28 lg:grid-cols-[1fr_auto] lg:justify-items-stretch lg:gap-20 lg:py-32 lg:text-left">
           <div className="flex flex-col items-center lg:items-start">
             <h1 className="animate-rise text-[2rem] font-medium leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.15rem]">
-              AI Safety & Alignment
+              AI Safety Initiative
               <br />
-              Initiative
+              at&nbsp;IU&nbsp;Bloomington
             </h1>
-            <p className="animate-rise-delay mt-6 max-w-sm text-base leading-relaxed text-white/75 sm:text-lg">
-              A community at Indiana University working to ensure advanced AI benefits humanity.
+            <p className="animate-rise-delay mt-6 max-w-[23rem] text-base leading-relaxed text-white/75 sm:max-w-[26rem] sm:text-lg">
+              An interdisciplinary research community working to ensure advanced AI benefits humanity.
             </p>
             <div className="animate-rise-delay-2 mt-10 flex flex-wrap justify-center gap-3 lg:justify-start">
               <a
@@ -50,14 +51,7 @@ export default function Home() {
             </div>
           </div>
 
-          <img
-            src="/aisai-logo.png"
-            alt="AISAI logo"
-            width={320}
-            height={320}
-            draggable={false}
-            className="animate-rise-delay pointer-events-none h-56 w-56 select-none object-contain sm:h-72 sm:w-72 lg:h-80 lg:w-80"
-          />
+          <NeuralNetVisual className="animate-rise-delay" />
         </div>
       </section>
 
@@ -72,7 +66,7 @@ export default function Home() {
               with human interests is one of the most consequential open problems of this decade.
             </p>
             <p>
-              The AI Safety & Alignment Initiative (AISAI) is a student-run interdisciplinary hub
+              The AI Safety Initiative (AISI) is a student-run interdisciplinary hub
               for IUB students across computer science, philosophy, economics, and beyond to take on
               the technical and governance challenges of advanced AI.
             </p>
@@ -80,13 +74,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper">
+      <section className="bg-neutral-50">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <h2 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">What We Do</h2>
 
           <ul className="mt-12 grid gap-5 sm:grid-cols-2">
             {activities.map((item, index) => (
-              <li key={item.title} className="border border-line p-6 sm:p-8">
+              <li key={item.title} className="border border-line bg-paper p-6 sm:p-8">
                 <span className="text-sm font-medium text-crimson">
                   {String(index + 1).padStart(2, '0')}
                 </span>

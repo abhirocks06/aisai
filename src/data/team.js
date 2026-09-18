@@ -4,14 +4,12 @@ export const facultyAdvisor = {
   bio: 'Calum McNamara is an Assistant Professor of Philosophy at Indiana University Bloomington. His work spans decision theory, formal epistemology, and more recently AI alignment and interpretability. Before IU, he was a postdoc at Yale and received his PhD from the University of Michigan.',
   email: 'calmcnam@iu.edu',
   website: 'https://calum-mcnamara.github.io/',
-  photo: '/calum-mcnamara.jpg',
 }
 
 export const officers = [
   {
     name: 'Abhinav Sisodiya',
     role: 'President',
-    photo: '/abhinav-sisodiya.jpg',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {
@@ -21,12 +19,12 @@ export const officers = [
   },
   {
     name: 'TBD',
-    role: 'Treasurer',
+    role: 'Media Lead',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
   {
     name: 'TBD',
-    role: 'Media Lead',
+    role: 'Treasurer',
     blurb: 'Placeholder: leadership bio coming soon.',
   },
 ]
