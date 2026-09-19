@@ -44,12 +44,12 @@ export default function Footer() {
           }}
         >
           <img
-            src="/aisai-logo-crimson.png"
+            src="/aisi-mark.png"
             alt=""
-            width={36}
-            height={36}
+            width={28}
+            height={28}
             draggable={false}
-            className="pointer-events-none h-9 w-9 shrink-0 object-contain"
+            className="pointer-events-none h-7 w-7 shrink-0 object-contain"
           />
           <span className="text-sm font-medium text-ink">
             AI Safety Initiative (AISI) at IU Bloomington
