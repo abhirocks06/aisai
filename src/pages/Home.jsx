@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-neutral-100">
+      <section className="bg-neutral-50">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <h2 className="text-3xl font-medium tracking-tight text-ink sm:text-4xl">What We Do</h2>
 
