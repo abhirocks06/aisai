@@ -58,8 +58,8 @@ export default function Editorial() {
                     className="group grid gap-3 py-8 no-underline transition-opacity hover:opacity-70 sm:grid-cols-[11rem_1fr] sm:gap-10 sm:py-10 md:grid-cols-[14rem_1fr]"
                   >
                     <div className="flex flex-row items-center gap-3 sm:flex-col sm:items-start sm:gap-1 sm:pt-0.5">
-                      <span className="text-sm font-medium text-ink">{topic}</span>
-                      <time dateTime={post.date} className="text-sm text-crimson">
+                      <span className="text-sm font-medium text-crimson">{topic}</span>
+                      <time dateTime={post.date} className="text-sm text-ink">
                         {formatPostDate(post.date)}
                       </time>
                     </div>
